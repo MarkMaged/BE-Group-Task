@@ -1,0 +1,30 @@
+* {
+    font-family: var(--font-poppins), sans-serif;
+}
+
+.parts {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 48px;
+}
+.parts::before {
+    content: '';
+    display: inline-block;
+    width: 50px;
+    height: 5px;
+    background-color: #6d5cbc;
+    margin-right: 10px;
+    vertical-align: middle;
+    border-radius: 10px;
+}
+.descContainer {
+    width: 1021px;
+    height: 67px;
+}
+.partsDesc{
+font-weight: 400;
+font-size: 18px;
+line-height: 27px;
+letter-spacing: 0%;
+color: #666666;
+}
