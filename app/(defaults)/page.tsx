@@ -7,8 +7,8 @@ export const metadata: Metadata = {
     title: 'Main Page',
 };
 
-const Sales = () => {
+const Page = () => {
     return <MainPage />;
 };
 
-export default Sales;
+export default Page;

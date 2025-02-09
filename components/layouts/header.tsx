@@ -73,17 +73,17 @@ const Header = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/apps/calendar" className="block rounded-full p-2 hover:bg-white-light/90 hover:text-primary dark:bg-dark/40 dark:hover:bg-dark/60">
+                                <Link href="/" className="block rounded-full p-2 hover:bg-white-light/90 hover:text-primary dark:bg-dark/40 dark:hover:bg-dark/60">
                                     {t('categories')}
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/apps/calendar" className="block rounded-full p-2 hover:bg-white-light/90 hover:text-primary dark:bg-dark/40 dark:hover:bg-dark/60">
+                                <Link href="/" className="block rounded-full p-2 hover:bg-white-light/90 hover:text-primary dark:bg-dark/40 dark:hover:bg-dark/60">
                                     {t('contact')}
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/apps/calendar" className="block rounded-full p-2 hover:bg-white-light/90 hover:text-primary dark:bg-dark/40 dark:hover:bg-dark/60">
+                                <Link href="/" className="block rounded-full p-2 hover:bg-white-light/90 hover:text-primary dark:bg-dark/40 dark:hover:bg-dark/60">
                                     {t('about')}
                                 </Link>
                             </li>
@@ -132,17 +132,17 @@ const Header = () => {
                         </Link>
                     </li>
                     <li>
-                        <Link href="/apps/calendar" className="block rounded-full p-2 hover:bg-white-light/90 hover:text-primary dark:bg-dark/40 dark:hover:bg-dark/60">
+                        <Link href="/" className="block rounded-full p-2 hover:bg-white-light/90 hover:text-primary dark:bg-dark/40 dark:hover:bg-dark/60">
                             {t('categories')}
                         </Link>
                     </li>
                     <li>
-                        <Link href="/apps/calendar" className="block rounded-full p-2 hover:bg-white-light/90 hover:text-primary dark:bg-dark/40 dark:hover:bg-dark/60">
+                        <Link href="/" className="block rounded-full p-2 hover:bg-white-light/90 hover:text-primary dark:bg-dark/40 dark:hover:bg-dark/60">
                             {t('contact')}
                         </Link>
                     </li>
                     <li>
-                        <Link href="/apps/calendar" className="block rounded-full p-2 hover:bg-white-light/90 hover:text-primary dark:bg-dark/40 dark:hover:bg-dark/60">
+                        <Link href="/" className="block rounded-full p-2 hover:bg-white-light/90 hover:text-primary dark:bg-dark/40 dark:hover:bg-dark/60">
                             {t('about')}
                         </Link>
                     </li>
