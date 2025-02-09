@@ -6,7 +6,10 @@ import Swal from 'sweetalert2';
 import * as Yup from 'yup';
 import { UserValues } from '@/types/User';
 import { createUser } from '@/api/Users';
-const UserForm = () => {
+interface ChildProps {
+    getNewUsers: () => void; // Function type for calling parent's function
+  }
+const UserForm: React.FC<ChildProps> = ({getNewUsers}) => {
     const { t } = getTranslation();
     const [formStatus, setFormStatus] = useState<any>({});
     const userForm: UserValues = {
@@ -49,6 +52,7 @@ const UserForm = () => {
                 title: 'Form submitted successfully',
                 padding: '10px 20px',
             });
+            getNewUsers();
         } else {
         }
     }, [formStatus]);
@@ -91,8 +95,8 @@ const UserForm = () => {
                             </div>
                         </div>
 
-                        <button type="submit" disabled={isSubmitting} className="btn btn-primary !mt-6">
-                            Submit Form
+                        <button type="submit" disabled={isSubmitting} className="btn !mt-6 subBtn">
+                            {t('send')}
                         </button>
                     </Form>
                 )}

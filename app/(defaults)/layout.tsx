@@ -4,6 +4,7 @@ import Header from '@/components/layouts/header';
 import MainContainer from '@/components/layouts/main-container';
 import Overlay from '@/components/layouts/overlay';
 import { Poppins } from "next/font/google";
+import "@/lib/fontawesome";
 const poppins =Poppins({
     subsets: ['latin'],
     weight: ['300', '400', '500', '600', '700'],

@@ -18,8 +18,8 @@
     border-radius: 10px;
 }
 .descContainer {
-    width: 1021px;
-    height: 67px;
+    max-width: 1021px;
+    min-height: 67px;
 }
 .partsDesc {
     font-weight: 400;
@@ -28,19 +28,6 @@
     letter-spacing: 0%;
     color: #666666;
 }
-
-/* .customTooltip {
-    box-shadow: 0px 4px 25px 0px #6d5cba;
-    background-color: #6d5cba !important;
-    border: none !important;
-    color: white !important;
-    font-weight: bold;
-    padding: 5px;
-    width: 312px !important;
-    height: 120px !important;
-    border-radius: 8px;
-} */
-
 
 .customTooltip {
     background: transparent !important;
@@ -90,3 +77,37 @@
     margin-top: 5px;
     font-weight: 400;
   }
+.subBtn{
+  width: 100%;
+height: 52px;
+border-radius: 2px;
+padding: 8px;
+background-color: #49BD88;
+color: white;
+border: none;
+}
+
+.mobMenu{
+  position: relative;
+  width: 100%;
+  z-index: 9;
+  background-color: aliceblue;
+  overflow: auto;
+  height: 0px;
+}
+.menuOpen{
+  height: 20vh;
+  transition: all 0.5s ease-in-out;
+}
+.menuClose{
+  height: 0px;
+  transition: all 0.5s ease-in-out;
+}
+
+.footer{
+  background-color: #6D5CBC;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  font-size: 12px;
+}

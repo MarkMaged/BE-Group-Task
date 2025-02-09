@@ -7,12 +7,14 @@ import { toggleRTL } from '@/store/themeConfigSlice';
 import Dropdown from '@/components/dropdown';
 import { usePathname, useRouter } from 'next/navigation';
 import { getTranslation } from '@/i18n';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 const Header = () => {
     const pathname = usePathname();
     const dispatch = useDispatch();
     const router = useRouter();
     const { t, i18n } = getTranslation();
+    const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
         const selector = document.querySelector('ul.horizontal-menu a[href="' + window.location.pathname + '"]');
@@ -57,32 +59,32 @@ const Header = () => {
     return (
         <header className={`z-40`}>
             <div className="shadow-sm">
-                <div className="flex w-full items-center justify-between bg-transparent" style={{padding: '1rem 3rem'}}>
-                    <div className="horizontal-logo flex items-center ltr:mr-2 rtl:ml-2 lg:block">
+                <div className="flex w-full items-center justify-between bg-transparent" style={{ padding: '1rem 3rem' }}>
+                    <div className="horizontal-logo flex items-center lg:block ltr:mr-2 rtl:ml-2">
                         <Link href="/" className="main-logo flex shrink-0 items-center">
                             <img className="inline w-12 ltr:-ml-1 rtl:-mr-1" src="/assets/images/logo.svg" alt="logo" />
                         </Link>
                     </div>
-                    <div className="ltr:mr-2 rtl:ml-2 sm:block">
-                        <ul className="flex items-center space-x-4 rtl:space-x-reverse dark:text-[#d0d2d6]">
+                    <div className="hidden md:block ltr:mr-2 rtl:ml-2">
+                        <ul className="flex items-center space-x-4 dark:text-[#d0d2d6] rtl:space-x-reverse">
                             <li>
                                 <Link href="/" className="block rounded-full p-2 hover:bg-white-light/90 hover:text-primary dark:bg-dark/40 dark:hover:bg-dark/60">
-                                {t('home')}
+                                    {t('home')}
                                 </Link>
                             </li>
                             <li>
                                 <Link href="/apps/calendar" className="block rounded-full p-2 hover:bg-white-light/90 hover:text-primary dark:bg-dark/40 dark:hover:bg-dark/60">
-                                {t('categories')}
+                                    {t('categories')}
                                 </Link>
                             </li>
                             <li>
                                 <Link href="/apps/calendar" className="block rounded-full p-2 hover:bg-white-light/90 hover:text-primary dark:bg-dark/40 dark:hover:bg-dark/60">
-                                {t('contact')}
+                                    {t('contact')}
                                 </Link>
                             </li>
                             <li>
                                 <Link href="/apps/calendar" className="block rounded-full p-2 hover:bg-white-light/90 hover:text-primary dark:bg-dark/40 dark:hover:bg-dark/60">
-                                {t('about')}
+                                    {t('about')}
                                 </Link>
                             </li>
                         </ul>
@@ -117,8 +119,34 @@ const Header = () => {
                                 </ul>
                             </Dropdown>
                         </div>
+                        <FontAwesomeIcon icon={faBars} size="2x" className="cursor-pointer sm:block md:hidden" onClick={() => setIsOpen((prev) => !prev)}/>
                     </div>
                 </div>
+            </div>
+
+            <div  className={`${isOpen ? "menuOpen" : "menuClose"} mobMenu`}>
+                <ul className="flex flex-col items-center space-x-4 dark:text-[#d0d2d6] rtl:space-x-reverse">
+                    <li>
+                        <Link href="/" className="block rounded-full p-2 hover:bg-white-light/90 hover:text-primary dark:bg-dark/40 dark:hover:bg-dark/60">
+                            {t('home')}
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="/apps/calendar" className="block rounded-full p-2 hover:bg-white-light/90 hover:text-primary dark:bg-dark/40 dark:hover:bg-dark/60">
+                            {t('categories')}
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="/apps/calendar" className="block rounded-full p-2 hover:bg-white-light/90 hover:text-primary dark:bg-dark/40 dark:hover:bg-dark/60">
+                            {t('contact')}
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="/apps/calendar" className="block rounded-full p-2 hover:bg-white-light/90 hover:text-primary dark:bg-dark/40 dark:hover:bg-dark/60">
+                            {t('about')}
+                        </Link>
+                    </li>
+                </ul>
             </div>
         </header>
     );

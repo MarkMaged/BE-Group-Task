@@ -10,11 +10,11 @@ const Part1 = () => {
     const { t } = getTranslation();
     const [isMounted, setIsMounted] = useState(false);
     const [users, setUsers] = useState<UsersResponse>();
+    const getUsers = async () => {        
+        const data = await fetchUsers();
+        setUsers(data);
+    };
     useEffect(() => {
-        const getUsers = async () => {
-            const data = await fetchUsers();
-            setUsers(data);
-        };
         getUsers()
         setIsMounted(true);
     }, []);
@@ -31,13 +31,13 @@ const Part1 = () => {
                 <div className="pt-5">
                     <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
                         <div className="h-full w-full">
-                            <UserForm />
+                            <UserForm getNewUsers={getUsers}/>
                         </div>
                         <div className="h-full w-full">
                             <div className="mb-5 flex items-center justify-between">
                                 <h5 className="text-lg font-semibold" style={{ color: '#6D5CBC' }}>{t('results')}</h5>
                             </div>
-                            <div className="table-responsive" style={{ border: '1px solid #E5E5E5' }}>
+                            <div className="table-responsive" style={{ border: '1px solid #E5E5E5',maxHeight: '250px', overflow: 'auto' }}>
                                 <table className="panel">
                                     <thead>
                                         <tr className="border-b-0">

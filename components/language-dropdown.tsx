@@ -1,6 +1,5 @@
 'use client';
 import Dropdown from '@/components/dropdown';
-import IconCaretDown from '@/components/icon/icon-caret-down';
 import { getTranslation } from '@/i18n';
 import { IRootState } from '@/store';
 import { toggleRTL } from '@/store/themeConfigSlice';
@@ -42,9 +41,9 @@ const LanguageDropdown = ({ className = '' }: LanguageDropdownProps) => {
                                 <img src={`/assets/images/flags/${i18n.language.toUpperCase()}.svg`} alt="image" className="h-5 w-5 rounded-full object-cover" />
                             </div>
                             <div className="text-base font-bold uppercase">{i18n.language}</div>
-                            <span className="shrink-0">
+                            {/* <span className="shrink-0">
                                 <IconCaretDown />
-                            </span>
+                            </span> */}
                         </>
                     }
                 >
